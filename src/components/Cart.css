@@ -52,3 +52,31 @@
 .total > div > button {
   flex: 1;
 }
+
+/* form  */
+.cart__form {
+  background-color: #ece6e6;
+  box-shadow: -1px 2px 20px -4px rgba(0, 0, 0, 0.5);
+}
+.form__container {
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.form__container li {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  padding: 1rem;
+}
+.btn.btn-success {
+  background-color: #5cb85c;
+}
+.btn.btn-info {
+  background-color: #5bc0de;
+}
+input {
+  padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+}
