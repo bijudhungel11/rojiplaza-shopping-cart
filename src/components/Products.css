@@ -63,3 +63,54 @@
 .btn-primary {
   background-color: #f0c040;
 }
+.Modal {
+  background-color: pink;
+  height: 50%;
+}
+.ReactModal__Content {
+  background-image: linear-gradient(
+    to right bottom,
+    #f857a6,
+    #ff5858,
+    #f27121
+  ) !important;
+}
+.ReactModal__Overlay {
+  background-color: rgba(172, 30, 160, 0.363) !important;
+}
+.product__modal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 97vh;
+  margin-top: 3rem;
+}
+.product__modal--image img {
+  object-fit: contain;
+  height: 50rem;
+  width: 46rem;
+  margin: 0 auto;
+  box-shadow: -1px 2px 20px -5px rgba(0, 0, 0, 0.753);
+}
+
+.product__details--info {
+  flex: 1 1;
+  margin: 1rem;
+}
+.close__modal {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  transition: all 0.4s;
+  outline: none;
+  z-index: 99999;
+}
+.close__modal:hover {
+  color: black;
+  cursor: pointer;
+}

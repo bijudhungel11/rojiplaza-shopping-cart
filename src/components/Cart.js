@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Cart.css";
+import Fade from "react-reveal/Fade";
 export default class Cart extends Component {
   state = {
     showCheckout: false,
@@ -36,7 +37,7 @@ export default class Cart extends Component {
   render() {
     const { cartItems, removeFromCart } = this.props;
 
-    console.log(cartItems);
+    /*     console.log(cartItems); */
     return (
       <div>
         {cartItems.length === 0 ? (
@@ -49,28 +50,31 @@ export default class Cart extends Component {
 
         <div className="cart__list">
           <div className="cart">
-            <ul className="cart__list--items">
-              {cartItems.map((item, i) => (
-                <li key={item._id}>
-                  <div className="cart__list--itemsImage">
-                    <img src={item.image} alt={item.title} />
-                  </div>
-                  <div>
-                    <div className="cart__list--itemName">{item.title}</div>
-                    <div className="right">
-                      NRS {item.price}x {item.count}
-                      {"  "}
-                      <button
-                        onClick={() => removeFromCart(item, i)}
-                        className="btn btn-danger"
-                      >
-                        Remove
-                      </button>
+            <Fade left cascade>
+              {" "}
+              <ul className="cart__list--items">
+                {cartItems.map((item, i) => (
+                  <li key={item._id}>
+                    <div className="cart__list--itemsImage">
+                      <img src={item.image} alt={item.title} />
                     </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                    <div>
+                      <div className="cart__list--itemName">{item.title}</div>
+                      <div className="right">
+                        NRS {item.price}x {item.count}
+                        {"  "}
+                        <button
+                          onClick={() => removeFromCart(item, i)}
+                          className="btn btn-danger"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Fade>
           </div>
           <div className="cart">
             {cartItems.length === 0 ? (
@@ -96,57 +100,60 @@ export default class Cart extends Component {
               </>
             )}
           </div>
-          {this.state.showCheckout && (
-            <div className="cart cart__form">
-              <form onSubmit={this.createOrder}>
-                <ul className="form__container">
-                  <li>
-                    <label>Email</label>
-                    <input
-                      value={this.state.email}
-                      name="email"
-                      type="email"
-                      required
-                      onChange={this.handleInput}
-                    />
-                  </li>
-                  <li>
-                    <label>Name</label>
-                    <input
-                      value={this.state.name}
-                      name="name"
-                      type="text"
-                      required
-                      onChange={this.handleInput}
-                    />
-                  </li>
-                  <li>
-                    <label>Address</label>
-                    <input
-                      value={this.state.address}
-                      name="address"
-                      type="text"
-                      required
-                      onChange={this.handleInput}
-                    />
-                  </li>
-                  <li>
-                    <button
-                      type="submit"
-                      className="btn btn-success"
-                      disabled={
-                        !this.state.name &&
-                        !this.state.email &&
-                        !this.state.address
-                      }
-                    >
-                      Check Out
-                    </button>
-                  </li>
-                </ul>
-              </form>
-            </div>
-          )}
+
+          <Fade cascade right>
+            {this.state.showCheckout && (
+              <div className=" cart__form">
+                <form onSubmit={this.createOrder}>
+                  <ul className="form__container">
+                    <li>
+                      <label>Email</label>
+                      <input
+                        value={this.state.email}
+                        name="email"
+                        type="email"
+                        required
+                        onChange={this.handleInput}
+                      />
+                    </li>
+                    <li>
+                      <label>Name</label>
+                      <input
+                        value={this.state.name}
+                        name="name"
+                        type="text"
+                        required
+                        onChange={this.handleInput}
+                      />
+                    </li>
+                    <li>
+                      <label>Address</label>
+                      <input
+                        value={this.state.address}
+                        name="address"
+                        type="text"
+                        required
+                        onChange={this.handleInput}
+                      />
+                    </li>
+                    <li>
+                      <button
+                        type="submit"
+                        className="btn btn-success"
+                        disabled={
+                          !this.state.name &&
+                          !this.state.email &&
+                          !this.state.address
+                        }
+                      >
+                        Check Out
+                      </button>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+            )}
+          </Fade>
         </div>
       </div>
     );

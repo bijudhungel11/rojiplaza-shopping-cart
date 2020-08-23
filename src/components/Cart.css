@@ -55,7 +55,12 @@
 
 /* form  */
 .cart__form {
-  background-color: #ece6e6;
+  background-image: linear-gradient(
+    to right bottom,
+    #f857a6,
+    #ff5858,
+    #f27121
+  ) !important;
   box-shadow: -1px 2px 20px -4px rgba(0, 0, 0, 0.5);
 }
 .form__container {
