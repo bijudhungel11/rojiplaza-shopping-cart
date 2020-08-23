@@ -7,6 +7,13 @@ body,
 #root {
   height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to right bottom,
+    #f857a50e,
+    #ff585828,
+    #f2712118
+  ) !important;
 }
 body,
 input,
