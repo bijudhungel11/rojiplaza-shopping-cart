@@ -75,6 +75,9 @@
     #f27121
   ) !important;
 }
+.ReactModal__Content::-webkit-scrollbar {
+  display: none;
+}
 .ReactModal__Overlay {
   background-color: rgba(172, 30, 160, 0.363) !important;
 }
@@ -109,6 +112,7 @@
   transition: all 0.4s;
   outline: none;
   z-index: 99999;
+  background-color: red;
 }
 .close__modal:hover {
   color: black;
