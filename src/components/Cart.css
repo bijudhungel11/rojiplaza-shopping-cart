@@ -85,3 +85,37 @@ input {
   padding: 1rem;
   border: 0.1rem #c0c0c0 solid;
 }
+
+/* order placed css */
+.order__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.order__container ul {
+  list-style-type: none;
+}
+.order__container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order__container li div {
+  padding: 1rem;
+}
+.total__price--border-top {
+  border-top: 2px solid black !important;
+}
+.order__container .items {
+  text-align: right;
+  padding: 0;
+}
+.success-message {
+  color: green;
+}
+
+.order__items--list {
+  padding: 1rem;
+  border: 2px dotted black;
+}
